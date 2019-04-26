@@ -9,6 +9,5 @@ autohooks = ">=1.1"
 
 [dev-packages]
 pylint = "*"
-
-[pipenv]
-allow_prereleases = true
+wheel="*"
+twine ="*"

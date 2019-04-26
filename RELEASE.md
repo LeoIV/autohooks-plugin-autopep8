@@ -25,7 +25,7 @@ and [PEP440](https://www.python.org/dev/peps/pep-0440/).
 * Create a distribution files
 
   ```sh
-  rm -rf dist build autohooks_plugin_black.egg-info
+  rm -rf dist build autohooks_plugin_autopep8.egg-info
   python3 setup.py sdist bdist_wheel
   ```
 
@@ -66,14 +66,14 @@ and [PEP440](https://www.python.org/dev/peps/pep-0440/).
   twine upload -r testpypi dist/*
   ```
 
-* Check if the package is available at https://test.pypi.org/project/autohooks-plugin-black
+* Check if the package is available at https://test.pypi.org/project/autohooks-plugin-autopep8
 
 * Create a test directory
 
   ```sh
   mkdir autohooks-install-test
   cd autohooks-install-test
-  pipenv run pip install --pre -I --extra-index-url https://test.pypi.org/simple/ autohooks-plugin-black
+  pipenv run pip install --pre -I --extra-index-url https://test.pypi.org/simple/ autohooks-plugin-autopep8
   ```
 
 * Remove test environment
@@ -89,7 +89,7 @@ and [PEP440](https://www.python.org/dev/peps/pep-0440/).
   ```sh
   git push origin
   ```
-  Open GitHub and create a PR against https://github.com/greenbone/autohooks-plugin-black
+  Open GitHub and create a PR against https://github.com/LeoIV/autohooks-plugin-autopep8
 
 * Update after PR is merged
 
@@ -111,7 +111,7 @@ and [PEP440](https://www.python.org/dev/peps/pep-0440/).
 * Create final distribution files
 
   ```sh
-  rm -rf dist build autohooks_plugin_black.egg-info
+  rm -rf dist build autohooks_plugin_autopep8.egg-info
   python3 setup.py sdist bdist_wheel
   ```
 
@@ -123,7 +123,7 @@ and [PEP440](https://www.python.org/dev/peps/pep-0440/).
   twine upload dist/*
   ```
 
-* Check if new version is available at https://pypi.org/project/autohooks-plugin-black
+* Check if new version is available at https://pypi.org/project/autohooks-plugin-autopep8
 
 * Update version in [setup.py](setup.py)
 

@@ -1,5 +1,3 @@
-# Copyright (C) 2019 Greenbone Networks GmbH
-#
 # SPDX-License-Identifier: GPL-3.0-or-later
 #
 # This program is free software: you can redistribute it and/or modify
@@ -17,8 +15,9 @@
 
 from pkg_resources import safe_version
 from setuptools import setup, find_namespace_packages
+from distutils.core import setup
 
-VERSION = (0, 0, 1, 'alpha')
+VERSION = (0, 0, 1)
 
 
 def get_version():
@@ -37,7 +36,7 @@ setup(
     description='Autohooks plugin for code formatting via autopep8',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/greenbone/autohooks-plugin-autopep8',
+    url='https://github.com/LeoIV/autohooks-plugin-autopep8',
     packages=find_namespace_packages(include=['autohooks.*']),
     python_requires='>=3.5',
     install_requires=['autohooks>=1.1', 'autopep8'],
