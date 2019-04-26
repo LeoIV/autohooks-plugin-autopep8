@@ -69,7 +69,7 @@ def precommit(config=None, **kwargs):  # pylint: disable=unused-argument
     with stash_unstaged_changes(files):
         for f in files:
             try:
-                subprocess.check_call(['autopep8', '-i -a', str(f.absolute_path())])
+                subprocess.check_call(['autopep8', '-i', '-a', str(f.absolute_path())])
                 ok('Running autopep8 on {}'.format(str(f.path)))
             except subprocess.CalledProcessError as e:
                 error('Running autopep8 on {}'.format(str(f.path)))
