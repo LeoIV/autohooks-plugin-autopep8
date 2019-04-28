@@ -7,3 +7,6 @@ name = "pypi"
 autopep8 = "*"
 autohooks = {git = "https://github.com/greenbone/autohooks"}
 autohooks-plugin-autopep8 = {path = "."}
+
+[dev-packages]
+pytest = "*"
