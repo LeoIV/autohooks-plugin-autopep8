@@ -9,4 +9,4 @@ autohooks = ">=1.1"
 autohooks-plugin-autopep8 = {path = "."}
 
 [dev-packages]
-wheel="*"
+twine ="*"
