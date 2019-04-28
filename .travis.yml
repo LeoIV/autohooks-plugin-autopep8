@@ -4,6 +4,6 @@ python:
   - '3.6'
 install:
   - 'pip install pipenv'
-# - 'pipenv install setuptools'
+  - 'pipenv install setuptools'
   - 'pipenv sync --dev'
 script: 'ls'

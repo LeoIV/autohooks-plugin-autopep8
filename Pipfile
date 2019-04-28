@@ -11,4 +11,3 @@ autohooks-plugin-autopep8 = {path = "."}
 [dev-packages]
 wheel="*"
 twine ="*"
-setuptools="*"

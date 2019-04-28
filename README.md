@@ -1,4 +1,4 @@
-# autohooks-plugin-autopep8
+# autohooks-plugin-autopep8 [![Build Status](https://travis-ci.com/LeoIV/autohooks-plugin-autopep8.svg?branch=master)](https://travis-ci.com/LeoIV/autohooks-plugin-autopep8)
 
 An [autohooks](https://github.com/greenbone/autohooks) plugin for python code
 formatting via [autopep8](https://github.com/hhatto/autopep8).
