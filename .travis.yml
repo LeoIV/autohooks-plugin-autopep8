@@ -5,3 +5,4 @@ python:
 install:
   - 'pip install pipenv'
   - 'pipenv install .'
+script: 'ls'
