@@ -39,7 +39,7 @@ setup(
     long_description_content_type='text/markdown',
     url='https://github.com/LeoIV/autohooks-plugin-autopep8',
     packages=find_namespace_packages(include=['autohooks.*']),
-    python_requires='>=3.5',
+    python_requires='>=3.6',
     install_requires=['autohooks>=1.1', 'autopep8'],
     classifiers=[
         # Full list: https://pypi.org/pypi?%3Aaction=list_classifiers
