@@ -13,9 +13,10 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-from pkg_resources import safe_version
-from setuptools import setup, find_namespace_packages
 from distutils.core import setup
+
+from pkg_resources import safe_version
+from setuptools import find_namespace_packages
 
 VERSION = (0, 0, 2, 'alpha')
 
