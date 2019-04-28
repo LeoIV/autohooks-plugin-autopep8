@@ -5,5 +5,5 @@ python:
 install:
   - 'pip install pipenv'
   - 'pipenv install setuptools'
-  - 'pipenv sync'
+  - 'pipenv sync -d'
 script: 'ls'
