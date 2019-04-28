@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "e1d0c487d79ea77694d6433f5b1d1310651014138bcc6b90933e1f03b0d9f9b1"
+            "sha256": "89ef09b93898a417217de71a7827487d18fa8b778415ef1541a535d7a58bd6f8"
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -20,6 +20,9 @@
             ],
             "index": "pypi",
             "version": "==1.1.0"
+        },
+        "autohooks-plugin-autopep8": {
+            "path": "."
         },
         "autopep8": {
             "hashes": [
