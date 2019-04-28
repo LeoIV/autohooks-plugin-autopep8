@@ -13,11 +13,12 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-from pkg_resources import safe_version
-from setuptools import setup, find_namespace_packages
 from distutils.core import setup
 
-VERSION = (0, 0, 1)
+from pkg_resources import safe_version
+from setuptools import find_namespace_packages
+
+VERSION = (0, 0, 2, 'alpha')
 
 
 def get_version():
@@ -38,7 +39,7 @@ setup(
     long_description_content_type='text/markdown',
     url='https://github.com/LeoIV/autohooks-plugin-autopep8',
     packages=find_namespace_packages(include=['autohooks.*']),
-    python_requires='>=3.5',
+    python_requires='>=3.6',
     install_requires=['autohooks>=1.1', 'autopep8'],
     classifiers=[
         # Full list: https://pypi.org/pypi?%3Aaction=list_classifiers

@@ -6,8 +6,4 @@ name = "pypi"
 [packages]
 autopep8 = "*"
 autohooks = ">=1.1"
-
-[dev-packages]
-pylint = "*"
-wheel="*"
-twine ="*"
+autohooks-plugin-autopep8 = {path = "."}
