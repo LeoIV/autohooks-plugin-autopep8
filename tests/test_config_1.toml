@@ -1,0 +1,5 @@
+[tool.autohooks.plugins.autopep8]
+include = ['1.py', 'foo/2.py']
+experimental-features = true
+ignore_errors = ['E101', 'E102']
+max_line_length = 20

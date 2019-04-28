@@ -61,7 +61,7 @@ def get_experimental_features_from_config(config: Union[None, Config]) -> bool:
     if not config:
         return DEFAULT_EXPERIMENTAL_FEATURES
     autopep8_config = get_autopep8_config(config)
-    experimental_features = autopep8_config.get_value('experimental_features', DEFAULT_EXPERIMENTAL_FEATURES)
+    experimental_features = autopep8_config.get_value('experimental-features', DEFAULT_EXPERIMENTAL_FEATURES)
     return experimental_features
 
 
@@ -101,12 +101,16 @@ def precommit(config=Union[None, Config], **kwargs) -> int:  # pylint: disable=u
         ok('No staged files for autopep8 available')
         return 0
 
+    call_str = ['autopep8', '-i', '-a', '-r', '--ignore', ",".join(ignore_errors), '--max-line-length',
+                str(max_line_length)]
+    if experimental:
+        call_str.append('--experimental')
+
     with stash_unstaged_changes(files):
         for f in files:
             try:
                 subprocess.check_call(
-                    ['autopep8', '-i', '-a', '-r', '--ignore', ",".join(ignore_errors), '--max_line_length',
-                     max_line_length, '--experimental', experimental, str(f.absolute_path())])
+                    call_str + [str(f.absolute_path())])
                 ok('Running autopep8 on {}'.format(str(f.path)))
             except subprocess.CalledProcessError as e:
                 error('Running autopep8 on {}'.format(str(f.path)))
