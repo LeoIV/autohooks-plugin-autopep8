@@ -31,17 +31,6 @@ DEFAULT_IGNORE_ERRORS = ['E226', 'E24', 'W50', 'W690']
 DEFAULT_MAX_LINE_LENGTH = 79
 
 
-
-
-
-
-
-
-
-
-
-
-
 def check_autopep8_installed():
     try:
         import autopep8  # pylint: disable=unused-import
