@@ -26,24 +26,54 @@ installed as a development dependency.
 ## Usage
 
 To activate the autopep8 autohooks plugin please add the following setting to your
-*pyproject.toml* file.
+`pyproject.toml` file.
 
-```toml
+````toml
 [tool.autohooks]
 pre-commit = ["autohooks.plugins.autopep8"]
-```
+````
+### Customizing the `autopep8` behavior
 
+To pass options to `autopep8`, you have to add an additional 
+````toml
+[tool.autohooks.plugins.autopep8]
+option = value
+````
+
+block to your `pyproject.toml` file. Possible options are explained in the following.
+#### Included files
 By default, autohooks plugin autopep8 checks all files with a *.py* ending. If only
 files in a sub-directory or files with different endings should be formatted,
 just add the following setting:
 
 ```toml
-[tool.autohooks]
-pre-commit = ["autohooks.plugins.autopep8"]
-
-[tool.autohooks.plugins.autopep8]
 include = ['foo/*.py', '*.foo']
+````
+
+#### Experimental `autopep8` features
+Experimental features can be enabled by adding the following setting:
+```toml
+experimental-features = true
 ```
+The are disabled by default.
+#### Ignored errors
+You can specificy which errors should be ignored as follows:
+````toml
+ignore_errors = ['E101', ...]
+````
+where the errors should match to the [list of errors fixed by `autopep8`](https://github.com/hhatto/autopep8).
+
+The default is `['E226', 'E24', 'W50', 'W690']`.
+
+#### Maximum line length
+The maximum allowed line length can be set with
+````toml
+max_line_length = 79
+````
+
+The default is 79.
+
+
 
 
 ## Contributing

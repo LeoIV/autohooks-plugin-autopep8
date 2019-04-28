@@ -14,6 +14,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import subprocess
+from typing import Union, Iterable, List
 
 from autohooks.api import out, ok, error
 from autohooks.api.git import (
@@ -22,8 +23,12 @@ from autohooks.api.git import (
     stash_unstaged_changes,
 )
 from autohooks.api.path import match
+from autohooks.config import Config
 
 DEFAULT_INCLUDE = ('*.py',)
+DEFAULT_EXPERIMENTAL_FEATURES = False
+DEFAULT_IGNORE_ERRORS = ['E226', 'E24', 'W50', 'W690']
+DEFAULT_MAX_LINE_LENGTH = 79
 
 
 def check_autopep8_installed():
@@ -35,11 +40,11 @@ def check_autopep8_installed():
         )
 
 
-def get_autopep8_config(config):
+def get_autopep8_config(config: Config) -> Config:
     return config.get('tool', 'autohooks', 'plugins', 'autopep8')
 
 
-def get_include_from_config(config):
+def get_include_from_config(config: Union[None, Config]) -> Iterable[str]:
     if not config:
         return DEFAULT_INCLUDE
 
@@ -52,13 +57,45 @@ def get_include_from_config(config):
     return include
 
 
-def precommit(config=None, **kwargs):  # pylint: disable=unused-argument
+def get_experimental_features_from_config(config: Union[None, Config]) -> bool:
+    if not config:
+        return DEFAULT_EXPERIMENTAL_FEATURES
+    autopep8_config = get_autopep8_config(config)
+    experimental_features = autopep8_config.get_value('experimental_features', DEFAULT_EXPERIMENTAL_FEATURES)
+    return experimental_features
+
+
+def get_ignore_errors_from_config(config: Union[None, Config]) -> List[str]:
+    if not config:
+        return DEFAULT_IGNORE_ERRORS
+
+    autopep8_config = get_autopep8_config(config)
+    ignore_errors = autopep8_config.get_value('ignore_errors', DEFAULT_IGNORE_ERRORS)
+    return ignore_errors
+
+
+def get_default_line_length_from_config(config: Union[None, Config]) -> int:
+    if not config:
+        return DEFAULT_MAX_LINE_LENGTH
+
+    autopep8_config = get_autopep8_config(config)
+    max_line_length = autopep8_config.get_value('max_line_length', DEFAULT_MAX_LINE_LENGTH)
+    return max_line_length
+
+
+def precommit(config=Union[None, Config], **kwargs) -> int:  # pylint: disable=unused-argument
     out('Running autopep8 pre-commit hook')
 
     check_autopep8_installed()
 
     include = get_include_from_config(config)
     files = [f for f in get_staged_status() if match(f.path, include)]
+
+    ignore_errors = get_ignore_errors_from_config(config)
+
+    max_line_length = get_default_line_length_from_config(config)
+
+    experimental = get_experimental_features_from_config(config)
 
     if len(files) == 0:
         ok('No staged files for autopep8 available')
@@ -67,7 +104,9 @@ def precommit(config=None, **kwargs):  # pylint: disable=unused-argument
     with stash_unstaged_changes(files):
         for f in files:
             try:
-                subprocess.check_call(['autopep8', '-i', '-a', str(f.absolute_path())])
+                subprocess.check_call(
+                    ['autopep8', '-i', '-a', '-r', '--ignore', ",".join(ignore_errors), '--max_line_length',
+                     max_line_length, '--experimental', experimental, str(f.absolute_path())])
                 ok('Running autopep8 on {}'.format(str(f.path)))
             except subprocess.CalledProcessError as e:
                 error('Running autopep8 on {}'.format(str(f.path)))
