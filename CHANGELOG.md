@@ -12,13 +12,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Remove
 
-## [1.1.0] - 2019-03-28
+## [0.0.2] - 2019-05-02
 
 ### Changed
 
-* Changed git repository location to https://github.com/greenbone/autohooks-plugin-black
-* Allow to configure files to be formatted [#1](https://github.com/greenbone/autohooks-plugin-black/pull/1)
-* Use new autohooks status API to print messages [#2](https://github.com/greenbone/autohooks-plugin-black/pull/2)
+* Added many toml configuration options
 
-[Unreleased]: https://github.com/greenbone/autohooks-plugin-black/compare/v1.1.0...HEAD
-[1.1.0]: https://github.com/greenbone/autohooks-plugin-black/compare/v1.0.0...v1.1.0
+[Unreleased]: https://github.com/LeoIV/autohooks-plugin-autopep8/compare/v0.0.2...HEAD
