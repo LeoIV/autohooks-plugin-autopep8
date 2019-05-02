@@ -1,3 +1,19 @@
+[tool.poetry]
+name="autohooks-plugin-autopep8"
+version="0.0.3a"
+description="Autohooks plugin for code formatting via autopep8"
+authors=["Leonard Papenmeier <leonard.papenmeier@posteo.de>"]
+
+[tool.poetry.dependencies]
+python = ">=3.5"
+autopep8 = "*"
+autohooks = ">=1.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "*"
+twine = "*"
+wheel = "*"
+
 [build-system]
 requires = ["setuptools", "wheel"]
 

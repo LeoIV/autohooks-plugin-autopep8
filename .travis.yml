@@ -1,9 +1,10 @@
 language: python
 dist: xenial
 python:
+  - '3.5'
   - '3.6'
   - '3.7'
 install:
-  - 'pip install pipenv'
-  - 'pipenv install'
-script: 'ls'
+  - 'pip install poetry'
+  - 'poetry install'
+script: 'pytest'
