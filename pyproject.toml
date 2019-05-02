@@ -1,8 +1,9 @@
 [tool.poetry]
 name="autohooks-plugin-autopep8"
-version="0.0.4a"
+version="0.0.4"
 description="Autohooks plugin for code formatting via autopep8"
 authors=["Leonard Papenmeier <leonard.papenmeier@posteo.de>"]
+readme="README.md"
 packages = [
     { include = "autohooks" }
 ]
