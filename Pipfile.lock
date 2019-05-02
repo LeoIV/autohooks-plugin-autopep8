@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "7b89fd74a44a6a7eb56d9d200ea54b162f0e485d9e99c9f4ad2520a11f3697f8"
+            "sha256": "f4598bc3eb4ca56d6e9196edbcd4282c03437a7ae7665cf42c693ee49f646761"
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -15,11 +15,11 @@
     },
     "default": {
         "autohooks": {
-            "git": "https://github.com/greenbone/autohooks",
-            "ref": "54d0bb6e893753e0968533bda0e00b1382058588"
-        },
-        "autohooks-plugin-autopep8": {
-            "path": "."
+            "hashes": [
+                "sha256:2ef6e1b90d1837191bacd5faa2f4cdaafebebb7c21707b6ba22ad1879ec31326"
+            ],
+            "index": "pypi",
+            "version": "==1.1.0"
         },
         "autohooks-plugin-autopep8": {
             "path": "."
@@ -31,12 +31,34 @@
             "index": "pypi",
             "version": "==1.4.4"
         },
+        "blessings": {
+            "hashes": [
+                "sha256:98e5854d805f50a5b58ac2333411b0482516a8210f23f43308baeb58d77c157d",
+                "sha256:b1fdd7e7a675295630f9ae71527a8ebc10bfefa236b3d6aa4932ee4462c17ba3",
+                "sha256:caad5211e7ba5afe04367cdd4cfc68fa886e2e08f6f35e76b7387d2109ccea6e"
+            ],
+            "version": "==1.7"
+        },
         "pycodestyle": {
             "hashes": [
                 "sha256:95a2219d12372f05704562a14ec30bc76b05a5b297b21a5dfe3f6fac3491ae56",
                 "sha256:e40a936c9a450ad81df37f549d676d127b1b66000a6c500caa2b085bc0ca976c"
             ],
             "version": "==2.5.0"
+        },
+        "six": {
+            "hashes": [
+                "sha256:3350809f0555b11f552448330d0b52d5f24c91a322ea4a15ef22629740f3761c",
+                "sha256:d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73"
+            ],
+            "version": "==1.12.0"
+        },
+        "toml": {
+            "hashes": [
+                "sha256:229f81c57791a41d65e399fc06bf0848bab550a9dfd5ed66df18ce5f05e73d5c",
+                "sha256:235682dd292d5899d361a811df37e04a8828a5b1da3115886b73cf81ebc9100e"
+            ],
+            "version": "==0.10.0"
         }
     },
     "develop": {
