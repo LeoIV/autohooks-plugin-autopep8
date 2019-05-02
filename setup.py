@@ -18,7 +18,7 @@ from distutils.core import setup
 from pkg_resources import safe_version
 from setuptools import find_namespace_packages
 
-VERSION = (0, 0, 2)
+VERSION = (0, 0, 3, 'alpha')
 
 
 def get_version():

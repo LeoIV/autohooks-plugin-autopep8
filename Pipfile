@@ -5,8 +5,10 @@ name = "pypi"
 
 [packages]
 autopep8 = "*"
-autohooks = ">=1.1"
+autohooks = {git="https://github.com/LeoIV/autohooks"}
 autohooks-plugin-autopep8 = {path = "."}
 
 [dev-packages]
 pytest = "*"
+twine = "*"
+wheel = "*"
